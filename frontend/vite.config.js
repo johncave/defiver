@@ -5,8 +5,8 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     proxy: {
-      '/api': 'http://localhost:8080',
-      '/uploads': 'http://localhost:8080',
+      '/api':     process.env.BACKEND_URL || 'http://localhost:8080',
+      '/uploads': process.env.BACKEND_URL || 'http://localhost:8080',
     }
   },
   build: {
